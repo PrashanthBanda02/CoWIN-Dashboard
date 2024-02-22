@@ -1,0 +1,50 @@
+.bar-chart-container {
+  height: auto;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #161625;
+  padding: 50px;
+}
+
+.app-logo-name-container {
+  height: 40px;
+  width: 100vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.app-logo {
+  height: 30px;
+  width: 30px;
+}
+.app-name {
+  color: #2cc6c6;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.app-title {
+  color: #cbd5e1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.failure-view {
+  height: 70vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+.failureDetails {
+  font-family: 'Bree Serif';
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
