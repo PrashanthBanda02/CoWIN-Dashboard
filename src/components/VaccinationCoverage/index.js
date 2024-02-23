@@ -1,62 +1,68 @@
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Legend,
-  ResponsiveContainer,
-} from 'recharts'
+import {BarChart, Bar, XAxis, YAxis, Legend} from 'recharts'
+
 import './index.css'
 
 const VaccinationCoverage = props => {
-  const {data} = props
-  const ccList = data.map(each => ({
-    dose1: each.dose_1,
-    dose2: each.dose_2,
-    vaccineDate: each.vaccine_date,
-  }))
-
-  const DataFormatter = number => {
-    if (number > 0) {
-      return `${number.toString()}00k`
+  const dataFormatter = number => {
+    if (number > 1000) {
+      return `${(number / 1000).toString()}k`
     }
-    return '0k'
+    return number.toString()
   }
+  const {vaccinationCoverageDetails} = props
 
   return (
-    <div className="sub-can">
-      <h1 className="vac-cov-head">Vaccination Coverage</h1>
-      <ResponsiveContainer width="100%" height={500}>
-        <BarChart
-          data={ccList}
-          margin={{
-            top: 5,
+    <div className="vaccination-by-coverage-container">
+      <h1 className="vaccination-by-coverage-heading">Vaccination Coverage</h1>
+      <BarChart
+        width={900}
+        height={400}
+        data={vaccinationCoverageDetails}
+        margin={{
+          top: 5,
+        }}
+      >
+        <XAxis
+          dataKey="vaccineDate"
+          tick={{
+            stroke: '#6c757d',
+            strokeWidth: 1,
+            fontSize: 15,
+            fontFamily: 'Roboto',
           }}
-        >
-          <XAxis
-            dataKey="vaccineDate"
-            tick={{
-              stroke: 'gray',
-              strokeWidth: 1,
-            }}
-          />
-          <YAxis
-            tickFormatter={DataFormatter}
-            tick={{
-              stroke: 'gray',
-              strokeWidth: 0,
-            }}
-          />
-          <Legend
-            wrapperStyle={{
-              padding: 30,
-            }}
-          />
-
-          <Bar dataKey="dose1" name="dose1" barSize="15%" fill="#5a8dee" />
-          <Bar dataKey="dose2" name="dose2" barSize="15%" fill="#f54394" />
-        </BarChart>
-      </ResponsiveContainer>
+        />
+        <YAxis
+          tickFormatter={dataFormatter}
+          tick={{
+            stroke: '#6c757d',
+            strokeWidth: 0.5,
+            fontSize: 15,
+            fontFamily: 'Roboto',
+          }}
+        />
+        <Legend
+          wrapperStyle={{
+            paddingTop: 20,
+            textAlign: 'center',
+            fontSize: 12,
+            fontFamily: 'Roboto',
+          }}
+        />
+        <Bar
+          dataKey="dose1"
+          name="Dose 1"
+          fill="#5a8dee"
+          radius={[10, 10, 0, 0]}
+          barSize="20%"
+        />
+        <Bar
+          dataKey="dose2"
+          name="Dose 2"
+          fill="#f54394"
+          radius={[5, 5, 0, 0]}
+          barSize="20%"
+        />
+      </BarChart>
     </div>
   )
 }

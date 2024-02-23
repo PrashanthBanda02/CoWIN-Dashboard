@@ -1,58 +1,71 @@
-.cdb-con {
-  min-height: 100vh;
+.app-container {
+  display: flex;
+  justify-content: center;
   background-color: #161625;
-  color: #cbd5e1;
-  width: 100vw;
+  min-height: 100vh;
+}
+
+.cowin-dashboard-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-family: 'Roboto';
-  padding-top: 25px;
-  padding-bottom: 25px;
-}
-.logo-head-con {
-  width: 90%;
-}
-.sub-can {
-  width: 90%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-color: #1c1c2b;
-  padding-top: 15px;
-  padding-bottom: 25px;
-  padding: 10px;
-}
-.vac-cov-head {
-  font-weight: 500;
-  font-size: 25px;
-  padding-left: 25px;
-  margin-bottom: 15px;
-}
-.logo {
-  display: flex;
   justify-content: flex-start;
+  width: 80%;
+  max-width: 1110px;
+}
+
+.logo-container {
+  display: flex;
   align-items: center;
+  margin-top: 20px;
 }
-.logo-img {
-  width: 60px;
-  margin-right: 10px;
+
+.logo {
+  width: 50px;
+  height: 50px;
 }
-.co-win-text {
+
+.logo-heading {
   color: #2cc6c6;
-  font-size: 30px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.5;
+  margin-left: 10px;
 }
-.cowin-head {
-  font-size: 35px;
+
+.heading {
+  color: #cbd5e1;
+  font-family: 'Roboto';
+  font-style: normal;
   font-weight: 500;
+  font-size: 30px;
+  line-height: 1.5;
 }
-.failure-con {
+
+.loading-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.failure-view {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
 }
-.failure-img {
-  width: 500px;
-  margin-bottom: 10px;
+
+.failure-image {
+  width: 50%;
+  margin: 10px;
+}
+
+.failure-text {
+  color: #ffffff;
+  font-family: 'Bree Serif';
+  font-size: 25px;
+  line-height: 1.4;
+  text-align: center;
 }
